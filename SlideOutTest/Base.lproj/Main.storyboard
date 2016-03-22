@@ -46,11 +46,49 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buttonOne" destination="1SR-z3-ZPY" id="2yB-hE-9Op"/>
+                        <segue destination="6h8-JT-N21" kind="show" identifier="FirstSegueID" id="QKN-Ym-lET"/>
+                        <segue destination="qgJ-Xc-NQ5" kind="show" identifier="SecondSegueID" id="wrd-KK-yrH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117" y="387"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="Y7g-pn-gOL">
+            <objects>
+                <viewController id="6h8-JT-N21" customClass="SecondViewController" customModule="SlideOutTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xs7-U7-6ri"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Gg-zH-fjf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kqz-Ld-no0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v0A-iN-2CW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1829" y="-13"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="RDR-pS-eAv">
+            <objects>
+                <viewController id="qgJ-Xc-NQ5" customClass="ThirdViewController" customModule="SlideOutTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7mX-kW-VDC"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZaB-gF-DE8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SQV-aY-mQG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HsC-ph-zVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1829" y="743"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xn9-QJ-7ah">
