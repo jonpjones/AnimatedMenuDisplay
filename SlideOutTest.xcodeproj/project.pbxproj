@@ -12,6 +12,7 @@
 		138B2D0E1CA054C3009180C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138B2D0C1CA054C3009180C9 /* Main.storyboard */; };
 		138B2D101CA054C3009180C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138B2D0F1CA054C3009180C9 /* Assets.xcassets */; };
 		138B2D131CA054C3009180C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138B2D111CA054C3009180C9 /* LaunchScreen.storyboard */; };
+		138B2D1B1CA0567D009180C9 /* BounceOutImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B2D1A1CA0567D009180C9 /* BounceOutImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		138B2D0F1CA054C3009180C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		138B2D121CA054C3009180C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		138B2D141CA054C3009180C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		138B2D1A1CA0567D009180C9 /* BounceOutImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceOutImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				138B2D081CA054C3009180C9 /* AppDelegate.swift */,
 				138B2D0A1CA054C3009180C9 /* ViewController.swift */,
+				138B2D1A1CA0567D009180C9 /* BounceOutImage.swift */,
 				138B2D0C1CA054C3009180C9 /* Main.storyboard */,
 				138B2D0F1CA054C3009180C9 /* Assets.xcassets */,
 				138B2D111CA054C3009180C9 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				138B2D0B1CA054C3009180C9 /* ViewController.swift in Sources */,
+				138B2D1B1CA0567D009180C9 /* BounceOutImage.swift in Sources */,
 				138B2D091CA054C3009180C9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
