@@ -9,10 +9,16 @@
 import Foundation
 import UIKit
 
-private var sidebarArray = [UILabel]()
-private var dictionary = Dictionary<String,String>()
+class MenuLabel: UILabel {
+    var segueID = ""
+}
 
+private var sidebarArray = [MenuLabel]()
+private var menuDictionary = Dictionary<String,String>()
 
+func menuLabelTitles (menuItemDictionary: Dictionary<String,String>) {
+    menuDictionary = menuItemDictionary
+}
 
 
 // MARK: Setting Up Background and Image View
@@ -49,6 +55,13 @@ private func bounceOut (soViewController: UIViewController) {
     
     let bounceViewImageView = setUpImageView(soViewController)
     let bounceBGView = setUpBackgroundView(soViewController)
+    
+    var x = 1
+    for key in menuDictionary.keys {
+        let menuLabel = setUpMenuItem(soViewController, buttonTitle: key, segueID: menuDictionary[key]!, position: CGFloat(x))
+        sidebarArray.append(menuLabel)
+        x = x + 1
+    }
     
     soViewController.view.bringSubviewToFront(bounceViewImageView)
     
@@ -92,11 +105,11 @@ private func setUpMenuItem (soViewController: UIViewController, buttonTitle: Str
     soViewController.view.addSubview(sidebarLabel)
     soViewController.view.bringSubviewToFront(sidebarLabel)
     
-    UIView.animateWithDuration(0.35, animations: { () -> Void in
-        sidebarLabel.frame = CGRectMake(10, 44 + 0.1 * position * soViewController.view.frame.height, 0.3 * soViewController.view.frame.width, 0.1 * soViewController.view.frame.height)
-        }) { (Bool) -> Void in
-            
-    }
+//    UIView.animateWithDuration(0.35, animations: { () -> Void in
+//        sidebarLabel.frame = CGRectMake(10, 44 + 0.1 * position * soViewController.view.frame.height, 0.3 * soViewController.view.frame.width, 0.1 * soViewController.view.frame.height)
+//        }) { (Bool) -> Void in
+//            
+//    }
     
     let gestureRecognizer = UITapGestureRecognizer(target: soViewController, action: "sidebarMenuLabelTapped:")
     sidebarLabel.addGestureRecognizer(gestureRecognizer)
@@ -108,7 +121,6 @@ private func setUpMenuItem (soViewController: UIViewController, buttonTitle: Str
 
 private func sidebarMenuLabelTapped (sender: UITapGestureRecognizer) {
     print(sender)
-    
 }
 
 

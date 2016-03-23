@@ -6,9 +6,8 @@
 //  Copyright © 2016 JJones. All rights reserved.
 //
 
-import UIKit
-
-class MenuLabel: UILabel {
-    var segueID = ""
-    
-}
+//import UIKit
+//
+//class MenuLabel: UILabel {
+//    var segueID = ""
+//}
