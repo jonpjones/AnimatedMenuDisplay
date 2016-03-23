@@ -58,8 +58,7 @@ class ViewController: UIViewController {
         bounceOut()
     }
     
-    func bounceOut () {
-        
+    func bounceOut () {                                         ////////
         
         let bounceViewImageView = setUpImageView()
         let bounceBGView = setUpBackgroundView()
@@ -79,7 +78,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func setUpBackgroundView () -> UIView {
+    func setUpBackgroundView () -> UIView {                 ////////
         let bgView = UIView()
         bgView.frame = view.frame
         bgView.backgroundColor = UIColor.grayColor()
@@ -89,7 +88,7 @@ class ViewController: UIViewController {
         return bgView
     }
     
-    func setUpImageView () -> (UIImageView) {
+    func setUpImageView () -> (UIImageView) {               //////
         let imageView = UIImageView()
         imageView.frame = view.frame
         imageView.image = snapshotOfScreen()
@@ -105,7 +104,7 @@ class ViewController: UIViewController {
         return imageView
     }
     
-    func snapshotOfScreen () -> (UIImage) {
+    func snapshotOfScreen () -> (UIImage) {                 //////
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let bounceViewImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -115,7 +114,7 @@ class ViewController: UIViewController {
         return bounceViewImage
     }
     
-    func returnToScreen () {
+    func returnToScreen () {                            //////
          let imageView = self.view.subviews[self.view.subviews.count - 1 - self.sidebarArray.count]
         print(self.view.subviews.count)
         print(self.view.subviews.count - 1 - self.sidebarArray.count)
