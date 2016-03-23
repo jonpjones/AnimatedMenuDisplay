@@ -21,15 +21,6 @@ class ViewController: UIViewController {
         buttonOne.setTitle("Tap Me!", forState: UIControlState.Normal)
         buttonOne.layer.cornerRadius = buttonOne.frame.width / 2
         
-        
-// However many options that we want in our slide out menu, we can create that many buttons.
-//        
-//        setUpMenuItem("Main Page", segueID: "nil", position: 1)
-//        setUpMenuItem("First Page", segueID: "FirstSegueID", position: 2)
-//        setUpMenuItem("Second Page", segueID: "SecondSegueID", position: 3)
-//        
-        
-        
     }
     
     func setUpMenuItem (buttonTitle: String, segueID: String, position: CGFloat) -> (MenuLabel) {
@@ -39,27 +30,22 @@ class ViewController: UIViewController {
         sidebarLabel.adjustsFontSizeToFitWidth = true
         sidebarLabel.userInteractionEnabled = true
         
-        sidebarLabel.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, 0.3 * self.view.frame.width, 0.1 * self.view.frame.height)
+        sidebarLabel.frame = CGRectMake(-(0.3 * self.view.frame.width), 44 + 0.1 * position * self.view.frame.height, 0.3 * self.view.frame.width, 0.1 * self.view.frame.height)
         
         self.view.addSubview(sidebarLabel)
         self.view.bringSubviewToFront(sidebarLabel)
         
-        let leftPoint = CGPointMake(view.frame.origin.x, position * 2 * sidebarLabel.frame.height)
-        
-        let rightPoint = CGPointMake(sidebarLabel.frame.width, position * 2 * sidebarLabel.frame.height)
-        
-        let gravity = UIGravityBehavior.init(items: [sidebarLabel])
-        let collision = UICollisionBehavior.init(items: [sidebarLabel])
-        
-        collision.addBoundaryWithIdentifier("bottom", fromPoint: leftPoint, toPoint: rightPoint)
-        
-        animator.addBehavior(gravity)
-        animator.addBehavior(collision)
+        UIView.animateWithDuration(0.35, animations: { () -> Void in
+            sidebarLabel.frame = CGRectMake(10, 44 + 0.1 * position * self.view.frame.height, 0.3 * self.view.frame.width, 0.1 * self.view.frame.height)
+            }) { (Bool) -> Void in
+                
+        }
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: "sidebarMenuLabelTapped:")
         sidebarLabel.addGestureRecognizer(gestureRecognizer)
         
         sidebarArray.append(sidebarLabel)
+        print(sidebarArray.count)
         return sidebarLabel
     }
     
@@ -79,12 +65,6 @@ class ViewController: UIViewController {
         let bounceBGView = setUpBackgroundView()
         
         view.bringSubviewToFront(bounceViewImageView)
-
-//        UIView.animateWithDuration(0.35) { () -> Void in
-//            bounceViewImageView.frame = CGRectMake(0.3 * bounceViewImageView.frame.width, 0.15 * bounceViewImageView.frame.height, 0.8 * bounceViewImageView.frame.width, 0.8 * bounceViewImageView.frame.height)
-//            self.view.bringSubviewToFront(bounceViewImageView)
-//            
-//        }
         
         UIView.animateWithDuration(0.35, animations: { () -> Void in
             
@@ -93,7 +73,7 @@ class ViewController: UIViewController {
             
             }) { (Bool) -> Void in
                 
-                self.setUpMenuItem("Main Page", segueID: "nil", position: 1)
+                self.setUpMenuItem("Main Page", segueID: "", position: 1)
                 self.setUpMenuItem("First Page", segueID: "FirstSegueID", position: 2)
                 self.setUpMenuItem("Second Page", segueID: "SecondSegueID", position: 3)
         }
@@ -136,18 +116,32 @@ class ViewController: UIViewController {
     }
     
     func returnToScreen () {
-        
-        let imageView = view.subviews.last
+         let imageView = self.view.subviews[self.view.subviews.count - 1 - self.sidebarArray.count]
+        print(self.view.subviews.count)
+        print(self.view.subviews.count - 1 - self.sidebarArray.count)
         
         UIView.animateWithDuration(0.35, animations: { () -> Void in
             
-            imageView!.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.width, self.view.frame.height)
+            for label in self.sidebarArray {
+                label.center = CGPointMake(-label.frame.width, label.frame.midY)
+            }
+            
+           
+            imageView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.width, self.view.frame.height)
+
             
             }) { (Bool) -> Void in
                 
-                imageView?.removeFromSuperview()
+                imageView.removeFromSuperview()
+                for label in self.sidebarArray {
+                    label.removeFromSuperview()
+                    
+                }
+                self.sidebarArray.removeAll()
+                
                 let bgView = self.view.subviews.last
                 bgView?.removeFromSuperview()
+
         }
     }
 }
