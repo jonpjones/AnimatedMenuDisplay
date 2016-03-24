@@ -28,7 +28,6 @@ class SlideOutController: NSObject  {
         
     }
     
-    
     // MARK: Setting Up Background and Image View
     
     private func setUpBackgroundView (soViewController: UIViewController) -> UIView {
@@ -134,13 +133,9 @@ class SlideOutController: NSObject  {
         }
     }
     
-    
     func returnToScreen (soViewController: UIViewController) {
-        print(sidebarArray.count)
-        print(slideoutViewController.view.subviews.count)
-        print(slideoutViewController.view.subviews.count - 1 - sidebarArray.count)
+
         let imageView = slideoutViewController.view.subviews.last
-        print(imageView)
         
         
         UIView.animateWithDuration(0.35, animations: { () -> Void in
@@ -150,8 +145,6 @@ class SlideOutController: NSObject  {
             }
             
             imageView!.frame = CGRectMake(self.slideoutViewController.view.frame.origin.x, self.slideoutViewController.view.frame.origin.y, self.slideoutViewController.view.frame.width, self.slideoutViewController.view.frame.height)
-            
-            print(imageView!.frame)
             
             }) { (Bool) -> Void in
                 
