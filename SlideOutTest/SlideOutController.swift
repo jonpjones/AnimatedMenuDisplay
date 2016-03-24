@@ -119,7 +119,7 @@ class SlideOutController: NSObject  {
         return sidebarLabel
     }
     
-    func sidebarMenuLabelTapped(sender: UITapGestureRecognizer) {
+    private func sidebarMenuLabelTapped(sender: UITapGestureRecognizer) {
 
         let label = sender.view as! MenuLabel
 
@@ -135,7 +135,7 @@ class SlideOutController: NSObject  {
     }
     
     
-    func returnToScreen (soViewController: UIViewController) {
+    private func returnToScreen (soViewController: UIViewController) {
         print(sidebarArray.count)
         print(slideoutViewController.view.subviews.count)
         print(slideoutViewController.view.subviews.count - 1 - sidebarArray.count)
