@@ -139,7 +139,7 @@ class SlideOutController: NSObject  {
         print(sidebarArray.count)
         print(slideoutViewController.view.subviews.count)
         print(slideoutViewController.view.subviews.count - 1 - sidebarArray.count)
-        let imageView = slideoutViewController.view.subviews[slideoutViewController.view.subviews.count - 1 - sidebarArray.count]
+        let imageView = slideoutViewController.view.subviews.last
         print(imageView)
         
         
@@ -149,13 +149,13 @@ class SlideOutController: NSObject  {
                 label.center = CGPointMake(-label.frame.width, label.frame.midY)
             }
             
-            imageView.frame = CGRectMake(self.slideoutViewController.view.frame.origin.x, self.slideoutViewController.view.frame.origin.y, self.slideoutViewController.view.frame.width, self.slideoutViewController.view.frame.height)
+            imageView!.frame = CGRectMake(self.slideoutViewController.view.frame.origin.x, self.slideoutViewController.view.frame.origin.y, self.slideoutViewController.view.frame.width, self.slideoutViewController.view.frame.height)
             
-            print(imageView.frame)
+            print(imageView!.frame)
             
             }) { (Bool) -> Void in
                 
-                imageView.removeFromSuperview()
+                imageView!.removeFromSuperview()
                 
                 for label in self.sidebarArray {
                     label.removeFromSuperview()
@@ -164,7 +164,7 @@ class SlideOutController: NSObject  {
                 self.sidebarArray.removeAll()
                 self.menuDictionary.removeAll()
                 
-                let bgView = soViewController.view.subviews.last
+                let bgView = self.slideoutViewController.view.subviews.last
                 bgView?.removeFromSuperview()
                 
         }

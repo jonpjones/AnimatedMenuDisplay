@@ -11,12 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var buttonOne: UIButton!
     var menuDictionary = Dictionary<String, [AnyObject]>()
-    var animator = UIDynamicAnimator()
     let soc = SlideOutController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animator = UIDynamicAnimator.init(referenceView: self.view)
         buttonOne.backgroundColor = UIColor.lightGrayColor()
         buttonOne.setTitle("Tap Me!", forState: UIControlState.Normal)
         buttonOne.layer.cornerRadius = buttonOne.frame.width / 2
