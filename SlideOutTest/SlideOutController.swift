@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 class MenuLabel: UILabel {
-    var segueID = ""
+    var storyBoardID = ""
     var position = CGFloat()
     
 }
 
 class SlideOutController: NSObject  {
-    
+    private let transitionManager = TransitionManager()
     private var slideoutViewController = UIViewController()
     private var sidebarArray = [MenuLabel]()
     private var menuDictionary = Dictionary<String,[AnyObject]>()
@@ -92,7 +92,6 @@ class SlideOutController: NSObject  {
         let bounceViewImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        
         return bounceViewImage
     }
     
@@ -105,7 +104,7 @@ class SlideOutController: NSObject  {
         
         sidebarLabel.frame = CGRectMake(-(0.3 * soViewController.view.frame.width), 0.1 * position * soViewController.view.frame.height, 0.3 * soViewController.view.frame.width, 0.1 * soViewController.view.frame.height)
         
-        sidebarLabel.segueID = segueID
+        sidebarLabel.storyBoardID = segueID
         sidebarLabel.position = position
         
         soViewController.view.addSubview(sidebarLabel)
@@ -122,14 +121,18 @@ class SlideOutController: NSObject  {
 
         let label = sender.view as! MenuLabel
 
-        if label.segueID == "" {
+        if label.storyBoardID == "" {
             
             returnToScreen(slideoutViewController)
             
         } else {
             
-            slideoutViewController.performSegueWithIdentifier(label.segueID, sender: slideoutViewController)
+            returnToScreen(slideoutViewController)
             
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let destinationViewController = storyBoard.instantiateViewControllerWithIdentifier(label.storyBoardID)
+            destinationViewController.transitioningDelegate = self.transitionManager
+            slideoutViewController.presentViewController(destinationViewController, animated: true, completion: nil)
         }
     }
     

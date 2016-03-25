@@ -9,27 +9,25 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    @IBOutlet weak var buttonOne: UIButton!
+    let soc = SlideOutController()
+    let transitionManager = TransitionManager()
+
+    var menuDictionary = Dictionary<String, [AnyObject]>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonOne.backgroundColor = UIColor.lightGrayColor()
+        buttonOne.setTitle("Tap Me!", forState: UIControlState.Normal)
+        buttonOne.layer.cornerRadius = buttonOne.frame.width / 2
 
-        // Do any additional setup after loading the view.
+        menuDictionary = ["Main Page": ["MainViewController", 1],"First Page":["", 2],"Second Page":["ThirdViewController", 3]]
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func buttonTapped(sender: UIButton) {
+        soc.slideOutWithMenu(self, menuItemDictionary: menuDictionary)
     }
-    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

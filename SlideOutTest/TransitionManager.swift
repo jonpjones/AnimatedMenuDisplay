@@ -19,7 +19,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
         toView!.view.frame = CGRectMake(0.3 * container!.frame.width, 0.15 * container!.frame.height, 0.8 * container!.frame.width, 0.8 * container!.frame.height)
         toView!.view.layer.cornerRadius = 15.0
         
-        toView!.view.alpha = 0.0
+        toView!.view.alpha = 0.3
         container?.addSubview(toView!.view)
         container?.bringSubviewToFront(toView!.view)
         
@@ -34,8 +34,6 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
                 container!.frame.height)
             toView!.view.alpha = 1.0
             toView!.view.layer.cornerRadius = 0.0
-            
-            //fromView!.view.center = CGPointMake(container!.center.x - container!.frame.width, container!.center.y)
         
             }) { (Bool) -> Void in
                 transitionContext.completeTransition(true)
