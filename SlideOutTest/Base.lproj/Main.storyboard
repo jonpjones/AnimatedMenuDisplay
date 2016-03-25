@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AUh-Cf-VEw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideOutTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="SlideOutTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -46,8 +46,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buttonOne" destination="1SR-z3-ZPY" id="2yB-hE-9Op"/>
-                        <segue destination="6h8-JT-N21" kind="show" identifier="FirstSegueID" id="QKN-Ym-lET"/>
-                        <segue destination="qgJ-Xc-NQ5" kind="show" identifier="SecondSegueID" id="wrd-KK-yrH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -57,7 +55,7 @@
         <!--Second View Controller-->
         <scene sceneID="Y7g-pn-gOL">
             <objects>
-                <viewController id="6h8-JT-N21" customClass="SecondViewController" customModule="SlideOutTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="6h8-JT-N21" customClass="SecondViewController" customModule="SlideOutTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xs7-U7-6ri"/>
                         <viewControllerLayoutGuide type="bottom" id="2Gg-zH-fjf"/>
@@ -65,17 +63,37 @@
                     <view key="view" contentMode="scaleToFill" id="Kqz-Ld-no0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyz-Qb-xbU">
+                                <rect key="frame" x="255" y="255" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="5dn-Ia-ejF"/>
+                                    <constraint firstAttribute="height" constant="90" id="O8e-ZI-EF6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="6h8-JT-N21" eventType="touchUpInside" id="IMt-XR-3YT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.53826144570000001" green="0.70260695110000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jyz-Qb-xbU" firstAttribute="centerY" secondItem="Kqz-Ld-no0" secondAttribute="centerY" id="OdP-pw-A5k"/>
+                            <constraint firstItem="jyz-Qb-xbU" firstAttribute="centerX" secondItem="Kqz-Ld-no0" secondAttribute="centerX" id="y02-Js-tI7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonOne" destination="jyz-Qb-xbU" id="a4f-b3-FKm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0A-iN-2CW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1829" y="-13"/>
+            <point key="canvasLocation" x="1847" y="183"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="RDR-pS-eAv">
             <objects>
-                <viewController id="qgJ-Xc-NQ5" customClass="ThirdViewController" customModule="SlideOutTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdViewController" id="qgJ-Xc-NQ5" customClass="ThirdViewController" customModule="SlideOutTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7mX-kW-VDC"/>
                         <viewControllerLayoutGuide type="bottom" id="ZaB-gF-DE8"/>
@@ -83,30 +101,32 @@
                     <view key="view" contentMode="scaleToFill" id="SQV-aY-mQG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATR-jr-3pd">
+                                <rect key="frame" x="255" y="255" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="1N4-bt-4jJ"/>
+                                    <constraint firstAttribute="height" constant="90" id="GPj-o3-A8Y"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="qgJ-Xc-NQ5" eventType="touchUpInside" id="gNn-w0-9MU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77954405859999998" green="0.67667691510000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ATR-jr-3pd" firstAttribute="centerX" secondItem="SQV-aY-mQG" secondAttribute="centerX" id="J3S-bV-TY5"/>
+                            <constraint firstItem="ATR-jr-3pd" firstAttribute="centerY" secondItem="SQV-aY-mQG" secondAttribute="centerY" id="Qih-k9-mvf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonOne" destination="ATR-jr-3pd" id="H09-4p-YFX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsC-ph-zVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1829" y="743"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xn9-QJ-7ah">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AUh-Cf-VEw" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SX2-4a-2YL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="deB-Y7-m5R"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yKM-6R-aUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="305" y="387"/>
+            <point key="canvasLocation" x="1847" y="865"/>
         </scene>
     </scenes>
 </document>

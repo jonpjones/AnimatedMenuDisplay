@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var buttonOne: UIButton!
     var menuDictionary = Dictionary<String, [AnyObject]>()
+    let transitionManager = TransitionManager()
     let soc = SlideOutController()
     
     override func viewDidLoad() {
@@ -19,13 +20,13 @@ class ViewController: UIViewController {
         buttonOne.setTitle("Tap Me!", forState: UIControlState.Normal)
         buttonOne.layer.cornerRadius = buttonOne.frame.width / 2
         
-        menuDictionary = ["Main Page": ["", 1],"First Page":["FirstSegueID", 2],"Second Page":["SecondSegueID", 3]]
-  
+        menuDictionary = ["Main Page": ["", 1],"First Page":["SecondViewController", 2],"Second Page":["ThirdViewController", 3]]
     }
     
     @IBAction func menuButtonTapped(sender: AnyObject) {
         soc.slideOutWithMenu(self, menuItemDictionary: menuDictionary)
     }
+
     
 }
 

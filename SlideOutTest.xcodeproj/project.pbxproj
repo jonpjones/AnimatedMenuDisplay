@@ -14,8 +14,8 @@
 		138B2D131CA054C3009180C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138B2D111CA054C3009180C9 /* LaunchScreen.storyboard */; };
 		138B2D401CA1A3A6009180C9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B2D3F1CA1A3A6009180C9 /* SecondViewController.swift */; };
 		138B2D421CA1A3C3009180C9 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B2D411CA1A3C3009180C9 /* ThirdViewController.swift */; };
-		138B2D461CA1AEF7009180C9 /* MenuLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B2D451CA1AEF7009180C9 /* MenuLabel.swift */; };
 		138B2D481CA301D1009180C9 /* SlideOutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B2D471CA301D1009180C9 /* SlideOutController.swift */; };
+		138B2D4A1CA4769E009180C9 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B2D491CA4769E009180C9 /* TransitionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,8 @@
 		138B2D141CA054C3009180C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138B2D3F1CA1A3A6009180C9 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		138B2D411CA1A3C3009180C9 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		138B2D451CA1AEF7009180C9 /* MenuLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuLabel.swift; sourceTree = "<group>"; };
 		138B2D471CA301D1009180C9 /* SlideOutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOutController.swift; sourceTree = "<group>"; };
+		138B2D491CA4769E009180C9 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +62,42 @@
 		138B2D071CA054C3009180C9 /* SlideOutTest */ = {
 			isa = PBXGroup;
 			children = (
+				138B2D4E1CA5A9C3009180C9 /* Storyboards */,
+				138B2D4D1CA5A998009180C9 /* Controller Classes */,
+				138B2D4B1CA5A96C009180C9 /* View Controllers */,
 				138B2D081CA054C3009180C9 /* AppDelegate.swift */,
-				138B2D0A1CA054C3009180C9 /* ViewController.swift */,
-				138B2D471CA301D1009180C9 /* SlideOutController.swift */,
-				138B2D451CA1AEF7009180C9 /* MenuLabel.swift */,
-				138B2D0C1CA054C3009180C9 /* Main.storyboard */,
-				138B2D411CA1A3C3009180C9 /* ThirdViewController.swift */,
-				138B2D3F1CA1A3A6009180C9 /* SecondViewController.swift */,
 				138B2D0F1CA054C3009180C9 /* Assets.xcassets */,
-				138B2D111CA054C3009180C9 /* LaunchScreen.storyboard */,
 				138B2D141CA054C3009180C9 /* Info.plist */,
 			);
 			path = SlideOutTest;
+			sourceTree = "<group>";
+		};
+		138B2D4B1CA5A96C009180C9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				138B2D0A1CA054C3009180C9 /* ViewController.swift */,
+				138B2D3F1CA1A3A6009180C9 /* SecondViewController.swift */,
+				138B2D411CA1A3C3009180C9 /* ThirdViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		138B2D4D1CA5A998009180C9 /* Controller Classes */ = {
+			isa = PBXGroup;
+			children = (
+				138B2D491CA4769E009180C9 /* TransitionManager.swift */,
+				138B2D471CA301D1009180C9 /* SlideOutController.swift */,
+			);
+			name = "Controller Classes";
+			sourceTree = "<group>";
+		};
+		138B2D4E1CA5A9C3009180C9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				138B2D0C1CA054C3009180C9 /* Main.storyboard */,
+				138B2D111CA054C3009180C9 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +171,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				138B2D461CA1AEF7009180C9 /* MenuLabel.swift in Sources */,
 				138B2D401CA1A3A6009180C9 /* SecondViewController.swift in Sources */,
+				138B2D4A1CA4769E009180C9 /* TransitionManager.swift in Sources */,
 				138B2D0B1CA054C3009180C9 /* ViewController.swift in Sources */,
 				138B2D421CA1A3C3009180C9 /* ThirdViewController.swift in Sources */,
 				138B2D481CA301D1009180C9 /* SlideOutController.swift in Sources */,
@@ -300,6 +324,7 @@
 				138B2D191CA054C3009180C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

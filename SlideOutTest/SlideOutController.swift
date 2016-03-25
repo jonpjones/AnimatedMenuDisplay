@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 class MenuLabel: UILabel {
-    var segueID = ""
+    var storyBoardID = ""
     var position = CGFloat()
     
 }
 
 class SlideOutController: NSObject  {
-    
+    private let transitionManager = TransitionManager()
     private var slideoutViewController = UIViewController()
     private var sidebarArray = [MenuLabel]()
     private var menuDictionary = Dictionary<String,[AnyObject]>()
@@ -27,7 +27,6 @@ class SlideOutController: NSObject  {
         bounceOut(soViewController)
         
     }
-    
     
     // MARK: Setting Up Background and Image View
     
@@ -75,7 +74,7 @@ class SlideOutController: NSObject  {
         UIView.animateWithDuration(0.35, animations: { () -> Void in
             
             for sidebarLabel in self.sidebarArray {
-                sidebarLabel.frame = CGRectMake(10, 44 + 0.1 * sidebarLabel.position * soViewController.view.frame.height, 0.3 * soViewController.view.frame.width - 20, 0.1 * soViewController.view.frame.height)
+                sidebarLabel.frame = CGRectMake(10, 0.1 * sidebarLabel.position * soViewController.view.frame.height, 0.3 * soViewController.view.frame.width - 20, 0.1 * soViewController.view.frame.height)
             }
             
             bounceViewImageView.frame = CGRectMake(0.3 * bounceViewImageView.frame.width, 0.15 * bounceViewImageView.frame.height, 0.8 * bounceViewImageView.frame.width, 0.8 * bounceViewImageView.frame.height)
@@ -93,7 +92,6 @@ class SlideOutController: NSObject  {
         let bounceViewImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        
         return bounceViewImage
     }
     
@@ -104,9 +102,9 @@ class SlideOutController: NSObject  {
         sidebarLabel.adjustsFontSizeToFitWidth = true
         sidebarLabel.userInteractionEnabled = true
         
-        sidebarLabel.frame = CGRectMake(-(0.3 * soViewController.view.frame.width), 44 + 0.1 * position * soViewController.view.frame.height, 0.3 * soViewController.view.frame.width, 0.1 * soViewController.view.frame.height)
+        sidebarLabel.frame = CGRectMake(-(0.3 * soViewController.view.frame.width), 0.1 * position * soViewController.view.frame.height, 0.3 * soViewController.view.frame.width, 0.1 * soViewController.view.frame.height)
         
-        sidebarLabel.segueID = segueID
+        sidebarLabel.storyBoardID = segueID
         sidebarLabel.position = position
         
         soViewController.view.addSubview(sidebarLabel)
@@ -123,24 +121,25 @@ class SlideOutController: NSObject  {
 
         let label = sender.view as! MenuLabel
 
-        if label.segueID == "" {
+        if label.storyBoardID == "" {
             
             returnToScreen(slideoutViewController)
             
         } else {
             
-            slideoutViewController.performSegueWithIdentifier(label.segueID, sender: slideoutViewController)
+            returnToScreen(slideoutViewController)
             
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let destinationViewController = storyBoard.instantiateViewControllerWithIdentifier(label.storyBoardID)
+            destinationViewController.transitioningDelegate = self.transitionManager
+            slideoutViewController.presentViewController(destinationViewController, animated: true, completion: nil)
         }
     }
     
-    
-    private func returnToScreen (soViewController: UIViewController) {
-        print(sidebarArray.count)
-        print(slideoutViewController.view.subviews.count)
-        print(slideoutViewController.view.subviews.count - 1 - sidebarArray.count)
+
+    func returnToScreen (soViewController: UIViewController) {
+
         let imageView = slideoutViewController.view.subviews.last
-        print(imageView)
         
         
         UIView.animateWithDuration(0.35, animations: { () -> Void in
@@ -150,8 +149,6 @@ class SlideOutController: NSObject  {
             }
             
             imageView!.frame = CGRectMake(self.slideoutViewController.view.frame.origin.x, self.slideoutViewController.view.frame.origin.y, self.slideoutViewController.view.frame.width, self.slideoutViewController.view.frame.height)
-            
-            print(imageView!.frame)
             
             }) { (Bool) -> Void in
                 
