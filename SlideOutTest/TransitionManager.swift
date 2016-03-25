@@ -21,6 +21,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
         
         toView!.view.alpha = 0.0
         container?.addSubview(toView!.view)
+        container?.bringSubviewToFront(toView!.view)
         
         
         let duration = self.transitionDuration(transitionContext)
@@ -31,9 +32,11 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
                 container!.frame.origin.y,
                 container!.frame.width,
                 container!.frame.height)
+            toView!.view.alpha = 1.0
+            toView!.view.layer.cornerRadius = 0.0
             
-            toView?.view.transform = CGAffineTransformIdentity
-            
+            //fromView!.view.center = CGPointMake(container!.center.x - container!.frame.width, container!.center.y)
+        
             }) { (Bool) -> Void in
                 transitionContext.completeTransition(true)
         }
