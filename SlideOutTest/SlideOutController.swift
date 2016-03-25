@@ -74,7 +74,7 @@ class SlideOutController: NSObject  {
         UIView.animateWithDuration(0.35, animations: { () -> Void in
             
             for sidebarLabel in self.sidebarArray {
-                sidebarLabel.frame = CGRectMake(10, 44 + 0.1 * sidebarLabel.position * soViewController.view.frame.height, 0.3 * soViewController.view.frame.width - 20, 0.1 * soViewController.view.frame.height)
+                sidebarLabel.frame = CGRectMake(10, 0.1 * sidebarLabel.position * soViewController.view.frame.height, 0.3 * soViewController.view.frame.width - 20, 0.1 * soViewController.view.frame.height)
             }
             
             bounceViewImageView.frame = CGRectMake(0.3 * bounceViewImageView.frame.width, 0.15 * bounceViewImageView.frame.height, 0.8 * bounceViewImageView.frame.width, 0.8 * bounceViewImageView.frame.height)
@@ -103,7 +103,7 @@ class SlideOutController: NSObject  {
         sidebarLabel.adjustsFontSizeToFitWidth = true
         sidebarLabel.userInteractionEnabled = true
         
-        sidebarLabel.frame = CGRectMake(-(0.3 * soViewController.view.frame.width), 44 + 0.1 * position * soViewController.view.frame.height, 0.3 * soViewController.view.frame.width, 0.1 * soViewController.view.frame.height)
+        sidebarLabel.frame = CGRectMake(-(0.3 * soViewController.view.frame.width), 0.1 * position * soViewController.view.frame.height, 0.3 * soViewController.view.frame.width, 0.1 * soViewController.view.frame.height)
         
         sidebarLabel.segueID = segueID
         sidebarLabel.position = position

@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var buttonOne: UIButton!
     var menuDictionary = Dictionary<String, [AnyObject]>()
+    let transitionManager = TransitionManager()
     let soc = SlideOutController()
     
     override func viewDidLoad() {
@@ -25,6 +26,11 @@ class ViewController: UIViewController {
     
     @IBAction func menuButtonTapped(sender: AnyObject) {
         soc.slideOutWithMenu(self, menuItemDictionary: menuDictionary)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let toViewController = segue.destinationViewController
+        toViewController.transitioningDelegate = self.transitionManager
     }
     
 }
