@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SR-z3-ZPY">
-                                <rect key="frame" x="255" y="255" width="90" height="90"/>
+                                <rect key="frame" x="20" y="20" width="90" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="8or-gv-cFp"/>
-                                    <constraint firstAttribute="width" constant="90" id="ac0-DK-198"/>
+                                    <constraint firstAttribute="width" constant="90" id="JJH-wL-LGd"/>
+                                    <constraint firstAttribute="height" constant="90" id="v5g-r5-zZ8"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -31,8 +32,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99919462199999998" green="0.77011459530000004" blue="0.75541531669999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="1SR-z3-ZPY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5c4-sN-K5w"/>
-                            <constraint firstItem="1SR-z3-ZPY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BUR-Xx-9nd"/>
+                            <constraint firstItem="1SR-z3-ZPY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CmW-m6-phn"/>
+                            <constraint firstItem="1SR-z3-ZPY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zBS-f7-vq9"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -65,10 +66,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyz-Qb-xbU">
-                                <rect key="frame" x="255" y="255" width="90" height="90"/>
+                                <rect key="frame" x="20" y="20" width="90" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="5dn-Ia-ejF"/>
-                                    <constraint firstAttribute="height" constant="90" id="O8e-ZI-EF6"/>
+                                    <constraint firstAttribute="height" constant="90" id="9mP-pb-tYp"/>
+                                    <constraint firstAttribute="width" constant="90" id="bum-na-9ft"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -78,8 +79,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.53826144570000001" green="0.70260695110000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="jyz-Qb-xbU" firstAttribute="centerY" secondItem="Kqz-Ld-no0" secondAttribute="centerY" id="OdP-pw-A5k"/>
-                            <constraint firstItem="jyz-Qb-xbU" firstAttribute="centerX" secondItem="Kqz-Ld-no0" secondAttribute="centerX" id="y02-Js-tI7"/>
+                            <constraint firstItem="jyz-Qb-xbU" firstAttribute="top" secondItem="Xs7-U7-6ri" secondAttribute="bottom" id="BhT-2K-cGG"/>
+                            <constraint firstItem="jyz-Qb-xbU" firstAttribute="leading" secondItem="Kqz-Ld-no0" secondAttribute="leadingMargin" id="hUt-0I-CtX"/>
                         </constraints>
                     </view>
                     <connections>
@@ -103,10 +104,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATR-jr-3pd">
-                                <rect key="frame" x="255" y="255" width="90" height="90"/>
+                                <rect key="frame" x="20" y="20" width="90" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="1N4-bt-4jJ"/>
-                                    <constraint firstAttribute="height" constant="90" id="GPj-o3-A8Y"/>
+                                    <constraint firstAttribute="width" constant="90" id="XRO-EN-Wak"/>
+                                    <constraint firstAttribute="height" constant="90" id="stq-d3-YR5"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -116,8 +117,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.77954405859999998" green="0.67667691510000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ATR-jr-3pd" firstAttribute="centerX" secondItem="SQV-aY-mQG" secondAttribute="centerX" id="J3S-bV-TY5"/>
-                            <constraint firstItem="ATR-jr-3pd" firstAttribute="centerY" secondItem="SQV-aY-mQG" secondAttribute="centerY" id="Qih-k9-mvf"/>
+                            <constraint firstItem="ATR-jr-3pd" firstAttribute="top" secondItem="7mX-kW-VDC" secondAttribute="bottom" id="Ih0-bx-Xsl"/>
+                            <constraint firstItem="ATR-jr-3pd" firstAttribute="leading" secondItem="SQV-aY-mQG" secondAttribute="leadingMargin" id="uhc-hE-zky"/>
                         </constraints>
                     </view>
                     <connections>

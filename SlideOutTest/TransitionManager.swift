@@ -19,7 +19,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
         toView!.view.frame = CGRectMake(0.3 * container!.frame.width, 0.15 * container!.frame.height, 0.8 * container!.frame.width, 0.8 * container!.frame.height)
         toView!.view.layer.cornerRadius = 15.0
         toView!.view.layoutSubviews()
-        toView!.view.alpha = 0.9
+        toView!.view.alpha = 1.0
         container?.addSubview(toView!.view)
         container?.bringSubviewToFront(toView!.view)
         

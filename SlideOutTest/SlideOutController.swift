@@ -117,7 +117,7 @@ class SlideOutController: NSObject  {
         return sidebarLabel
     }
     
-    private func sidebarMenuLabelTapped(sender: UITapGestureRecognizer) {
+    func sidebarMenuLabelTapped(sender: UITapGestureRecognizer) {
 
         let label = sender.view as! MenuLabel
 
