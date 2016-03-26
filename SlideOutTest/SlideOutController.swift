@@ -26,7 +26,6 @@ class SlideOutController: NSObject  {
         menuDictionary = menuItemDictionary
         slideoutViewController = soViewController
         bounceOut(soViewController)
-        
     }
     
     // MARK: Setting Up Background and Image View
@@ -156,7 +155,6 @@ class SlideOutController: NSObject  {
     func returnToScreen (soViewController: UIViewController) {
         
         let imageView = slideoutViewController.view.subviews.last
-        
         
         UIView.animateWithDuration(0.35, animations: { () -> Void in
             
