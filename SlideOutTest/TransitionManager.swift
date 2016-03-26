@@ -35,6 +35,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
                 container!.frame.origin.y,
                 container!.frame.width,
                 container!.frame.height)
+            
             toView!.view.alpha = 1.0
             toView!.view.layer.cornerRadius = 0.0
         
