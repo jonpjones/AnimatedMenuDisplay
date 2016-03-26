@@ -13,13 +13,17 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         let container = transitionContext.containerView()
-        let fromView = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
         let toView = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
         
-        toView!.view.frame = CGRectMake(0.3 * container!.frame.width, 0.15 * container!.frame.height, 0.8 * container!.frame.width, 0.8 * container!.frame.height)
+        toView!.view.frame = CGRectMake(0.3 * container!.frame.width,
+            0.15 * container!.frame.height,
+            0.8 * container!.frame.width,
+            0.8 * container!.frame.height)
+        
         toView!.view.layer.cornerRadius = 15.0
+        toView!.view.alpha = 0.0
         toView!.view.layoutSubviews()
-        toView!.view.alpha = 1.0
+
         container?.addSubview(toView!.view)
         container?.bringSubviewToFront(toView!.view)
         

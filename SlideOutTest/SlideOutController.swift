@@ -68,7 +68,6 @@ class SlideOutController: NSObject  {
             let position = CGFloat(menuDictionary[key]![1] as! CGFloat)
             setUpMenuItem(soViewController, buttonTitle: labelName, segueID: segueID, position: position)
         }
-        print("--> \(sidebarArray.count)")
         soViewController.view.bringSubviewToFront(bounceViewImageView)
         
         UIView.animateWithDuration(0.35, animations: { () -> Void in
@@ -83,8 +82,6 @@ class SlideOutController: NSObject  {
             }) { (Bool) -> Void in
         }
     }
-    
-    
     
     private func snapshotOfScreen (soViewController: UIViewController) -> (UIImage) {
         UIGraphicsBeginImageContext(soViewController.view.frame.size)
